@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 400px; font-family: sans-serif; padding: 10px; }
+    .section { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 5px; }
+    h3 { margin-top: 0; }
+    input, button { margin: 5px 0; padding: 5px; width: 100%; box-sizing: border-box; }
+    .password-field { font-family: monospace; background: #f5f5f5; }
+    .entry { background: #f9f9f9; margin-bottom: 8px; padding: 8px; border-radius: 4px; }
+    .entry strong { display: inline-block; width: 70px; }
+    .entry button { width: auto; margin-left: 5px; }
+  </style>
+</head>
+<body>
+  <div id="master-password-section" class="section">
+    <h3>Мастер-пароль</h3>
+    <input type="password" id="master-password" placeholder="Введите мастер-пароль">
+    <button id="unlock-btn">Разблокировать</button>
+    <div id="unlock-status"></div>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <div class="section">
+      <h3>Генерация пароля</h3>
+      <input type="text" id="generated-password" readonly class="password-field">
+      <button id="generate-btn">Сгенерировать новый пароль</button>
+      <button id="copy-generated-btn">Копировать</button>
+    </div>
+
+    <div class="section">
+      <h3>Сохранить пароль</h3>
+      <input type="text" id="site" placeholder="Сайт (например, example.com)">
+      <input type="text" id="username" placeholder="Логин">
+      <input type="text" id="password-to-save" placeholder="Пароль">
+      <button id="save-btn">Сохранить (зашифровать)</button>
+    </div>
+
+    <div class="section">
+      <h3>Сохранённые записи</h3>
+      <div id="entries-list"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
